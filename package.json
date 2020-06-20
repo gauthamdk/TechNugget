@@ -1,0 +1,19 @@
+{
+  "name": "technugget",
+  "version": "1.0.0",
+  "description": "Webpage for TechNugget",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauthamdk/TechNugget.git"
+  },
+  "author": "Gautham Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gauthamdk/TechNugget/issues"
+  },
+  "homepage": "https://github.com/gauthamdk/TechNugget#readme"
+}
