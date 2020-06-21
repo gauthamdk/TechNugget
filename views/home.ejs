@@ -1,24 +1,35 @@
 <%- include("./partials/header.ejs")-%>
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
-  <a class="navbar-brand navbar-title" href="/home">Tech Nugget</a>
+<div class="row">
+    <!-- <div class="d-inline"> -->
+       <a href="/home"><img src="assets/logo.png" class="logo"></a>
+<!--     </div> -->
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <div class="col d-md-inline d-none">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+                <a class="navbar-brand navbar-title" href="/home">Tech Nugget</a> 
 
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      
-    </ul>
-  </div>
-</nav>
+                <ul class="navbar-nav ml-auto links">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/home">HOME<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">STORE</a>
+                  </li>
+                </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+
+    <p class="text-center about mt-3 mx-4">
+        We bring the latest news and updates in the technological world through our instagram page
+    </p>
+    <div class="text-center">
+    <a href="https://www.instagram.com/tech.nugget"><i class="fab fa-instagram fa-7x"></i></a>
+    </div>
+</div>
 
 <%- include("./partials/footer.ejs")-%>

@@ -1,11 +1,42 @@
 body{
-	background-color:#3b3c3f
+	background-color:#3b3c3f;
+    font-family: 'Montserrat', sans-serif;
  }
  
  .navbar-custom{
-    background-color:#3b3c3f
+    background-color:#3b3c3f;
+    margin-top:15px;
  }
 
  .navbar-title{
     text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 3em;
+    color: #fafaf7;
+    font-weight: 600;
  }
+
+.links{
+    flex-direction: row;
+    font-size: 1.2em;
+}
+
+.links li{
+    padding: 10px;
+    color: #fafaf7;
+}
+
+.logo{
+    margin-left: 50px; 
+    margin-top: 10px;
+    width: 80px;
+}
+
+.about{
+    font-size:1.5em;
+    color: #fafaf7;
+}
+
