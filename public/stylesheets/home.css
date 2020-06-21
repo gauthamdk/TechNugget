@@ -1,3 +1,11 @@
 body{
 	background-color:#3b3c3f
-}
+ }
+ 
+ .navbar-custom{
+    background-color:#3b3c3f
+ }
+
+ .navbar-title{
+    text-transform: uppercase;
+ }
