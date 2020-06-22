@@ -31,14 +31,14 @@ body{
 }
 
 .logo{
-    margin-left: 20px; 
-    margin-top: 10px;
     width: 80px;
 }
 
 .about{
     font-size:1.5em;
     color: #fafaf7;
+    width:50%;
+    margin: 0 auto; 
 }
 
 @media only screen and (max-width: 1026px) {
@@ -47,30 +47,5 @@ body{
     }
 }
 
-@media only screen and (max-width: 1026px) {
-
-    .logo {
-    position: relative;
-    -webkit-animation: floatBubble 2s  normal ease-out forwards;
-    animation: floatBubble 2s normal ease-out forwards;
-}
-
-@-webkit-keyframes floatBubble {
-    0% {
-        left:0%;
-    }
-    100% {
-        margin-left: 43%;
-    }
-}
-@keyframes floatBubble {
-    0% {
-        left:0%;
-    }
-    100% {
-        margin-left: 43%;
-    }
-}
-}
 
 
