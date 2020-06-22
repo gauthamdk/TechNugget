@@ -1,6 +1,7 @@
 body{
 	background-color:#3b3c3f;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
  }
  
  .navbar-custom{
@@ -30,7 +31,7 @@ body{
 }
 
 .logo{
-    margin-left: 50px; 
+    margin-left: 20px; 
     margin-top: 10px;
     width: 80px;
 }
@@ -39,4 +40,37 @@ body{
     font-size:1.5em;
     color: #fafaf7;
 }
+
+@media only screen and (max-width: 1026px) {
+    .navbar-title {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1026px) {
+
+    .logo {
+    position: relative;
+    -webkit-animation: floatBubble 2s  normal ease-out forwards;
+    animation: floatBubble 2s normal ease-out forwards;
+}
+
+@-webkit-keyframes floatBubble {
+    0% {
+        left:0%;
+    }
+    100% {
+        margin-left: 43%;
+    }
+}
+@keyframes floatBubble {
+    0% {
+        left:0%;
+    }
+    100% {
+        margin-left: 43%;
+    }
+}
+}
+
 
