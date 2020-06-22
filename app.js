@@ -12,6 +12,10 @@ app.get("/home", (req, res)=>{
     res.render("home");
 })
 
+app.get("/store", (req, res)=>{
+    res.render("store")
+})
+
 app.listen(3000, ()=>{
 	console.log("Server running on port 3000");
 })
