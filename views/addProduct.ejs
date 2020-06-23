@@ -1,0 +1,13 @@
+<%- include("./partials/headerCreate.ejs") %>
+
+<form method="POST" action="/store/create">
+    <div class="form-group offset-4">
+        <input class="form-control w-50 mb-3" type="text" placeholder="Product Name" name="product[name]">
+        <input class="form-control w-50 mb-3" type="text" placeholder="Image" name="product[image]">
+        <input class="form-control w-50 mb-3" type="text" placeholder="Affiliate Link" name="product[affiliateLink]">
+        <input class="form-control w-50 mb-3" type="text" placeholder="Instagram Link" name="product[instagramLink]">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<%- include("./partials/footerCreate.ejs") %> 

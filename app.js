@@ -15,7 +15,8 @@ let productSchema = new mongoose.Schema({
     name: String,
     image: String, 
     affiliateLink: String, 
-    instagramLink: String
+    instagramLink: String, 
+    created: {type: Date, default: Date.now}
 });
 
 let Product = mongoose.model("Product", productSchema);
@@ -44,7 +45,24 @@ app.get("/store", (req, res)=>{
         else{
             res.render("store", {link :req.url.split('/')[1], activeClass: "active", products: products })
         }
-    })
+    }).sort({ created: 'desc' });
+})
+
+app.get("/store/create", (req, res)=>{
+    res.render("addProduct");
+})
+
+app.post("/store/create", (req, res)=>{
+    const product = req.body.product;
+
+    Product.create(product, (err, newProduct)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect("/store");
+        }
+    });
 })
 
 app.listen(3000, ()=>{
