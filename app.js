@@ -21,10 +21,10 @@ let productSchema = new mongoose.Schema({
 let Product = mongoose.model("Product", productSchema);
 
 // Product.create({
-//     name: "iphone",
-//     image: "nice picture string", 
-//     affiliateLink: "amazon here i come", 
-//     instagramLink: "go visit my page"
+//     name: "iPad Pro",
+//     image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-11-select-wifi-spacegray-202003_GEO_AE_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1583546266416",
+//     affiliateLink: "https://amzn.to/2NovJtU", 
+//     instagramLink: "https://www.instagram.com/p/B_0SmZJFvZ-/"
 // })
 
 app.get("/", (req, res)=>{

@@ -1,28 +1,24 @@
 <%- include("./partials/header.ejs")-%>
-   <!-- <% products.forEach(product =>{
-    //    console.log(product.name);
-    //    console.log(product.image);
-    //    console.log(product.affiliateLink);
-    //    console.log(product.instagramLink);
-   }) %>  -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 d-flex justify-content-center align-items-center name">
-            <h1 class="">
-                Heading
-            </h1>
-        </div>
 
-        <div class="col-md-6 d-flex justify-content-center">
-        <img class="img-fluid img-thumbnail product-img" src="https://images.unsplash.com/photo-1592431454781-ec4870757ce9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
-        </div>
-        <div class="h3 col-md-2 d-inline-flex d-md-flex justify-content-center align-items-center">
-        <a  href="#">Get it here</a>
-        </div>
-        <div class="col-md-1 d-inline-flex d-md-flex justify-content-end justify-content-lg-center align-items-center">
-        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+<% products.forEach(product =>{ %>
+    <div class="container pt-3 pb-5">
+        <div class="row">
+            <div class="col-md-3 d-flex justify-content-center align-items-center name">
+                <h1 class="">
+                    <%= product.name %> 
+                </h1>
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-center pb-3">
+            <img class="img-fluid img-thumbnail product-img" src="<%= product.image%> ">
+            </div>
+            <div class="h3 col-md-2 d-inline-flex d-md-flex justify-content-center align-items-center">
+            <a target="_blank" href="<%= product.affiliateLink %> ">Get it here</a>
+            </div>
+            <div class="col-md-1 d-inline-flex d-md-flex justify-content-end justify-content-lg-center align-items-center">
+            <a target="_blank" href="<%= product.instagramLink %> "><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
         </div>
     </div>
-</div>
-   
+<% }) %> 
 <%- include("./partials/footer.ejs")-%>
