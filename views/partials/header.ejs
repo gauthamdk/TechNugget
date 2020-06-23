@@ -4,6 +4,7 @@
     <title>Tech Nugget</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/store.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a227b14a0d.js" crossorigin="anonymous"></script>
 </head>
@@ -19,30 +20,23 @@
 
                     <ul class="navbar-nav ml-auto links">
                      
-                        <li class="nav-item
+                      <li class="nav-item
                         <% if(link === "home"){ %> 
                         <%= activeClass %>
                         <% }%>
                         ">
-                        
-                        <a class="nav-link" href="/home">HOME</a>
+                          <a class="nav-link" href="/home">HOME</a>
                       </li>
                       
                      
-                        <li class="nav-item 
+                      <li class="nav-item 
                         <% if(link === "store"){ %> 
                         <%= activeClass %>
                         <% }%>
                         ">
-                       
-                        <a class="nav-link" href="/store">STORE</a>
+                          <a class="nav-link" href="/store">STORE</a>
                       </li> 
 
-                      <!-- <li class="nav-item">
-                        <a class="nav-link" href="/store">
-                        STORE
-                    </a>
-                      </li> -->
                     </ul>
             </nav>
 
