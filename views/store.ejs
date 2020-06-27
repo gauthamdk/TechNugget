@@ -19,6 +19,7 @@
             <a target="_blank" href="<%= product.instagramLink %> "><i class="fab fa-instagram fa-2x"></i></a>
             </div>
 
+            <% if(currentUser){ %> 
             <div>
             <a href="/store/<%=product._id%>/edit" class="ml-3">Edit</a>
 
@@ -26,6 +27,7 @@
                 <button class="btn btn-danger btn-xs">Delete</a>
             </form>
             </div>
+        <% } %> 
         </div>
     </div>
 <% }) %> 

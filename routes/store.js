@@ -7,7 +7,8 @@ router.get("/", (req, res)=>{
 
     Product.find({}, (err, products)=>{
         if(err){
-            console.log(err);
+            req.flash("error", "Error displaying products");
+            res.redirect("/home");
         }
         else{
             res.render("store", {products: products})
@@ -24,9 +25,11 @@ router.post("/create", middleware.isLoggedIn, (req, res)=>{
 
     Product.create(product, (err, newProduct)=>{
         if(err){
-            console.log(err);
+            req.flash("error", "Failed to create product");
+            res.redirect("/");
         }
         else{
+            req.flash("success", "Succesfully added product");
             res.redirect("/store");
         }
     });
@@ -41,9 +44,11 @@ router.get("/:id/edit", middleware.isLoggedIn, (req, res)=>{
 router.put("/:id", middleware.isLoggedIn, (req, res)=>{
     Product.findByIdAndUpdate(req.params.id, req.body.product, (err, updatedProduct)=>{
         if(err){
-            res.redirect("/store/" + req.params.id + "/edit");
+            req.flash("error", "Error editing product");
+            res.redirect("/" + req.params.id + "/edit");
         }
         else{
+            req.flash("success", "Successfully edited product!");
             res.redirect("/store");
         }
     })
@@ -52,9 +57,11 @@ router.put("/:id", middleware.isLoggedIn, (req, res)=>{
 router.delete("/:id", middleware.isLoggedIn, (req, res)=>{
     Product.findByIdAndRemove(req.params.id, (err)=>{
         if(err){
+            req.flash("error", "Error deleting product");
             res.redirect("/store");
         }
         else{
+            req.flash("error", "Successfully deleted product");
             res.redirect("/store");
         }
     })

@@ -5,6 +5,7 @@ middleware.isLoggedIn = function(req, res, next){
         return next();
     }
     else{
+        req.flash("error", "You need to be logged in first!");
         res.redirect("/login");
     }
 }
