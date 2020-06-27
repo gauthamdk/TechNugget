@@ -4,8 +4,15 @@ const express=require("express"),
     mongoose = require("mongoose"), 
     passport = require("passport"),
     User = require("./models/user"), 
+    Product = require("./models/product"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override")
+
+const storeRoutes = require("./routes/store")
+
+mongoose.set('useFindAndModify', false);
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect("mongodb://localhost/techNugget", {useNewUrlParser: true})
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
@@ -25,22 +32,6 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-
-mongoose.set('useFindAndModify', false);
-mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/techNugget", {useNewUrlParser: true})
-
-let productSchema = new mongoose.Schema({
-    name: String,
-    image: String, 
-    affiliateLink: String, 
-    instagramLink: String, 
-    created: {type: Date, default: Date.now}
-});
-
-let Product = mongoose.model("Product", productSchema);
-
 // User.register({
 //     username: "gauthamdk"},
 //     "whatever1234", (err)=>{
@@ -52,11 +43,14 @@ let Product = mongoose.model("Product", productSchema);
 //         }
 //     }
 // )
+
 app.use((req, res, next) =>{
     res.locals.link = req.url.split('/')[1];
     res.locals.activeClass = "active";
     next();
 })
+
+app.use("/store", storeRoutes);
 
 app.get("/", (req, res)=>{
 	res.redirect("/home");
@@ -66,83 +60,17 @@ app.get("/home", (req, res)=>{
     res.render("home");
 })
 
-app.get("/store", (req, res)=>{
-
-    let products = Product.find({}, (err, products)=>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            res.render("store", {products: products})
-        }
-    }).sort({ created: 'desc' });
-})
-
-app.get("/store/create", isLoggedIn, (req, res)=>{
-    res.render("addProduct");
-})
-
-app.post("/store/create", isLoggedIn, (req, res)=>{
-    const product = req.body.product;
-
-    Product.create(product, (err, newProduct)=>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            res.redirect("/store");
-        }
-    });
-})
-
-app.get("/store/:id/edit", isLoggedIn, (req, res)=>{
-    Product.findById(req.params.id, (err, foundProduct)=>{
-        res.render("editProduct", {product: foundProduct});
-    })
-});
-
-app.put("/store/:id", isLoggedIn, (req, res)=>{
-    Product.findByIdAndUpdate(req.params.id, req.body.product, (err, updatedProduct)=>{
-        if(err){
-            res.redirect("/store/" + req.params.id + "/edit");
-        }
-        else{
-            res.redirect("/store");
-        }
-    })
-});
-
-app.delete("/store/:id", isLoggedIn, (req, res)=>{
-    Product.findByIdAndRemove(req.params.id, (err)=>{
-        if(err){
-            res.redirect("/store");
-        }
-        else{
-            res.redirect("/store");
-        }
-    })
-})
-
 app.get("/login", (req, res) =>{
     res.render("login");
 });
 
 app.post("/login", passport.authenticate("local",
     {
-        successRedirect: "/store/create",
+        successRedirect: "/store",
         failureRedirect: "/login"
     }),
 (req, res)=>{}
 );
-
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    else{
-        res.redirect("/login");
-    }
-}
 
 app.listen(3000, ()=>{
 	console.log("Server running on port 3000");
