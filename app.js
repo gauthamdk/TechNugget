@@ -17,7 +17,9 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useCreateIndex', true);
 
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+const url = process.env.DATABASEURL || "mongodb://localhost/techNugget";
+
+mongoose.connect(url, {useNewUrlParser: true});
 
 app.use(flash());
 app.set("view engine", "ejs"); 
