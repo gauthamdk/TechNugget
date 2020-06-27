@@ -89,7 +89,7 @@ body{
 
     .links{
         flex-direction: row;
-        font-size: 1.0em;
+        font-size: 0.8em;
     }
 
     .about{
@@ -111,7 +111,7 @@ body{
 
     .links{
         flex-direction: row;
-        font-size: 0.8em;
+        font-size: 0.6em;
     }
 
     .links li:nth-child(1){
