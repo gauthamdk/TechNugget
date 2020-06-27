@@ -29,6 +29,9 @@ body{
     padding: 10px;
     color: #fafaf7;
     z-index: 1;
+}
+
+.links li:nth-child(1){
     margin-left: 5px;
 }
 
