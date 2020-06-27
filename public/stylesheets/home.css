@@ -31,10 +31,6 @@ body{
     z-index: 1;
 }
 
-.links li:nth-child(1){
-    margin-left: 8px;
-}
-
 .logo{
     width: 80px;
 }
