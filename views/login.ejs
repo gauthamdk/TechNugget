@@ -1,0 +1,11 @@
+<%- include("./partials/header.ejs")-%>
+
+    <form action="/login" method="POST">
+        <div class="form-group offset-4">
+            <input class="form-control w-50 mb-3" type="text" placeholder="Username" name="username">
+            <input class="form-control w-50 mb-3" type="password" placeholder="Password" name="password">
+            <input type="Submit" value="Login">
+        </div>
+    </form>
+
+<%- include("./partials/footer.ejs")-%>

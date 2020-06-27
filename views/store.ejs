@@ -18,6 +18,14 @@
             <div class="col-md-1 d-inline-flex d-md-flex justify-content-end justify-content-lg-center align-items-center">
             <a target="_blank" href="<%= product.instagramLink %> "><i class="fab fa-instagram fa-2x"></i></a>
             </div>
+
+            <div>
+            <a href="/store/<%=product._id%>/edit" class="ml-3">Edit</a>
+
+            <form action="/store/<%=product._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger btn-xs">Delete</a>
+            </form>
+            </div>
         </div>
     </div>
 <% }) %> 

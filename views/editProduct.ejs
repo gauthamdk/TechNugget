@@ -1,0 +1,13 @@
+<%- include("./partials/header.ejs") %>
+
+<form method="POST" action="/store/<%=product._id%>?_method=PUT">
+    <div class="form-group offset-4">
+        <input class="form-control w-50 mb-3" type="text" value="<%=product.name%>" name="product[name]">
+        <input class="form-control w-50 mb-3" type="text" value="<%=product.image%>" name="product[image]">
+        <input class="form-control w-50 mb-3" type="text" value="<%=product.affiliateLink%>" name="product[affiliateLink]">
+        <input class="form-control w-50 mb-3" type="text" value="<%=product.instagramLink%>" name="product[instagramLink]">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<%- include("./partials/footer.ejs") %> 
