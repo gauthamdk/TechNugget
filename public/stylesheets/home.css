@@ -108,7 +108,6 @@ body{
     .links{
         flex-direction: row;
         font-size: 0.8em;
-        padding-left: 3px;
     }
 
     .links li:nth-child(1){
