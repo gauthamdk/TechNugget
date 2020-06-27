@@ -51,6 +51,33 @@ body{
     width: 100%;
 }
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.scroll {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
 @media only screen and (max-width: 768px) {
     .navbar-title {
         font-size: 2em;
@@ -66,6 +93,10 @@ body{
         color: #fafaf7;
         width:80%;
         margin: 0 auto; 
+    }
+
+    #footer{
+        height:80px;
     }
 }
 
@@ -84,6 +115,10 @@ body{
         color: #fafaf7;
         width:80%;
         margin: 0 auto; 
+    }
+
+    #footer{
+        height:80px;
     }
 }
 
