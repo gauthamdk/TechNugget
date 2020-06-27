@@ -108,10 +108,11 @@ body{
     .links{
         flex-direction: row;
         font-size: 0.8em;
+        padding-right: 5px;
     }
 
     .about{
-        font-size:1.4em;
+        font-size:0.8em;
         color: #fafaf7;
         width:80%;
         margin: 0 auto; 

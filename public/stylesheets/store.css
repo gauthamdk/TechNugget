@@ -5,3 +5,10 @@
 .name{
     color: #fafaf7;
 }
+
+
+@media only screen and (max-width: 640px) {
+    .product-img{
+        height: 200px;
+    }
+}
