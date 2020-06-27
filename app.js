@@ -16,7 +16,8 @@ const storeRoutes = require("./routes/store"),
 mongoose.set('useFindAndModify', false);
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useCreateIndex', true);
-mongoose.connect("mongodb://localhost/techNugget", {useNewUrlParser: true})
+// mongoose.connect("mongodb://localhost/techNugget", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://gautham:Jsbss1rhyruMElz8@technugget-x2kxs.mongodb.net/technugget?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 app.use(flash());
 app.set("view engine", "ejs"); 
