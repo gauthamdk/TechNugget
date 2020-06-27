@@ -6,6 +6,11 @@
     color: #fafaf7;
 }
 
+@media only screen and (max-width: 1540px) {
+    .product-img{
+        height: 300px;
+    }
+}
 
 @media only screen and (max-width: 640px) {
     .product-img{
