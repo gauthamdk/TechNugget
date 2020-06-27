@@ -38,15 +38,55 @@ body{
 .about{
     font-size:1.8em;
     color: #fafaf7;
-    width:50%;
+    width:70%;
     margin: 0 auto; 
+    text-align: center;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+    position: fixed;
+    height: 120px;
+    bottom: 0;
+    width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
     .navbar-title {
-        display: none;
+        font-size: 2em;
+    }
+
+    .links{
+        flex-direction: row;
+        font-size: 1.0em;
+    }
+
+    .about{
+        font-size:1.6em;
+        color: #fafaf7;
+        width:80%;
+        margin: 0 auto; 
     }
 }
+
+@media only screen and (max-width: 640px) {
+    .navbar-title {
+        font-size: 1.6em;
+    }
+
+    .links{
+        flex-direction: row;
+        font-size: 0.8em;
+    }
+
+    .about{
+        font-size:1.4em;
+        color: #fafaf7;
+        width:80%;
+        margin: 0 auto; 
+    }
+}
+
 
 
 
