@@ -36,11 +36,16 @@ body{
 }
 
 .about{
-    font-size:1.8em;
+    font-size:1.2em;
     color: #fafaf7;
     width:70%;
     margin: 0 auto; 
     text-align: center;
+}
+
+.affiliateimg{
+    height:500px;
+    width:auto;
 }
 
 #sticky-footer {
