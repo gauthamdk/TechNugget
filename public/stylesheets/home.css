@@ -103,6 +103,10 @@ body{
     #footer{
         height:80px;
     }
+
+    .affiliateimg{
+        height:300px;
+    }
 }
 
 @media only screen and (max-width: 640px) {
@@ -128,6 +132,10 @@ body{
 
     #footer{
         height:80px;
+    }
+
+    .affiliateimg{
+        height:300px;
     }
 }
 
